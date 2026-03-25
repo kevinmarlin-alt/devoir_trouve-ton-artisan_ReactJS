@@ -1,7 +1,7 @@
 -- Peuplement de la base de donnée
 
 -- Alimentation de la table artisans
-INSERT INTO artisans (nom, specialite, note, ville, a_propos, email, site_web, categorie, top_artisan) VALUES
+INSERT INTO artisans (name, speciality, rate, city, about, email, website, category, top_artisan) VALUES
 ('Boucherie Dumont', 'Boucher', 4.5, 'Lyon', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend ante sem, id volutpat massa fermentum nec. Praesent volutpat scelerisque mauris, quis sollicitudin tellus sollicitudin. ', 'boucherie.dumond@gmail.com', NULL, 'Alimentation', 0),
 ('Au pain chaud', 'Boulanger', 4.8, 'Montélimar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend ante sem, id volutpat massa fermentum nec. Praesent volutpat scelerisque mauris, quis sollicitudin tellus sollicitudin. ', 'aupainchaud@hotmail.com', NULL, 'Alimentation', 1),
 ('Chocolaterie Labbé', 'Chocolatier', 4.9, 'Lyon', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend ante sem, id volutpat massa fermentum nec. Praesent volutpat scelerisque mauris, quis sollicitudin tellus sollicitudin. ', 'chocolaterie-labbe@gmail.com', 'https://chocolaterie-labbe.fr', 'Alimentation', 1),

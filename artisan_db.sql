@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `ton_artisan`.`artisans` (
     `id` INT NOT NULL AUTO_INCREMENT, 
     `name` VARCHAR(50) NOT NULL UNIQUE,
     `speciality` VARCHAR(50) NOT NULL,
-    `rate` DECIMAL(2,1) NOT NULL CHECK (note >= 0),
+    `rate` DECIMAL(2,1) NOT NULL CHECK (rate BETWEEN 0 AND 5),
     `city` VARCHAR(50) NOT NULL,
     `about` VARCHAR(1000) NOT NULL,
     `email` VARCHAR(255) NOT NULL UNIQUE CHECK (email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),

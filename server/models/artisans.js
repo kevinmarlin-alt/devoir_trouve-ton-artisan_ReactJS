@@ -1,7 +1,7 @@
-const { sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../app')
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../db/mysql')
 
-const Artisan = sequelize.define('Artisan', 
+const artisan = sequelize.define('artisan', 
     {
         name: {
             type: DataTypes.STRING(50),
@@ -17,7 +17,8 @@ const Artisan = sequelize.define('Artisan',
             allowNull: false,
             defaultValue: 0,
             validate: {
-                min: 0
+                min: 0,
+                max: 5
             }
         },
         city: {
@@ -52,8 +53,9 @@ const Artisan = sequelize.define('Artisan',
         }
     },
     {
-        tableName: 'artisans'
+        tableName: 'artisans',
+        timestamps: false
     }
 )
 
-module.exports = Artisan
+module.exports = artisan
