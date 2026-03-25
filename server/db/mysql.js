@@ -11,4 +11,5 @@ exports.initClientDbConnection = () => {
       .then(() => console.log('Connexion réussie'))
       .catch(err => console.error('Erreur :', err));
 
+    module.exports = sequelize;
 }
