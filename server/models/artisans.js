@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../db/mysql')
 
-const artisan = sequelize.define('artisan', 
+const Artisan = sequelize.define('artisan', 
     {
         name: {
             type: DataTypes.STRING(50),
@@ -19,6 +19,10 @@ const artisan = sequelize.define('artisan',
             validate: {
                 min: 0,
                 max: 5
+            },
+            get() {
+                const rawValue = this.getDataValue('rate');
+                return parseFloat(rawValue)
             }
         },
         city: {
@@ -40,7 +44,10 @@ const artisan = sequelize.define('artisan',
         },
         website: {
             type: DataTypes.STRING(255),
-            unique: true
+            unique: true,
+            validate: {
+                isUrl: true
+            }
         },
         category: {
             type: DataTypes.STRING(50),
@@ -58,4 +65,4 @@ const artisan = sequelize.define('artisan',
     }
 )
 
-module.exports = artisan
+module.exports = Artisan
