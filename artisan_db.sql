@@ -1,14 +1,23 @@
 -- add DROP DATABASE
-DROP DATABASE IF EXISTS `trouve_ton_artisan`;
+DROP DATABASE IF EXISTS `ton_artisan`;
 
 -- Création de la base de données
-CREATE DATABASE IF NOT EXISTS `trouve_ton_artisan` DEFAULT CHARACTER SET  utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS `ton_artisan` DEFAULT CHARACTER SET  utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- Sélection de la base de donnée
-USE `trouve_ton_artisan`;
+USE `ton_artisan`;
+
+DROP USER IF EXISTS 'client'@'localhost';
+-- Création d'un nouvel utilisateur admin pour client tifosi
+CREATE USER 'client'@'localhost' IDENTIFIED BY 'MotDePasseFort123!';
+
+-- Attributions des privilèges
+GRANT SELECT ON ton_artisan.* TO 'client'@'localhost';
+-- Appliquation des privilèges
+FLUSH PRIVILEGES;
 
 -- Création des tables 
-CREATE TABLE IF NOT EXISTS `trouve_ton_artisan`.`artisans` (
+CREATE TABLE IF NOT EXISTS `ton_artisan`.`artisans` (
     `id` INT NOT NULL AUTO_INCREMENT, 
     `nom` VARCHAR(50) NOT NULL UNIQUE,
     `specialite` VARCHAR(50) NOT NULL,
