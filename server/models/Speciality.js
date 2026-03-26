@@ -1,22 +1,24 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db/mysql')
-
-const Speciality = sequelize.define('speciality',
-    {
-        name: {
-            type: DataTypes.STRING(50),
-            allowNull: false,
-            unique: true
+module.exports = (sequelize, DataTypes) => {
+    return sequelize.define('speciality',
+        {
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
+            name: {
+                type: DataTypes.STRING(50),
+                allowNull: false,
+                unique: true
+            },
+            category_id: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            }
         },
-        category_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+        {
+            tableName: 'specialities',
+            timestamps: false
         }
-    },
-    {
-        tableName: 'specialities',
-        timestamps: false
-    }
-)
-
-module.exports = Speciality
+    )
+} 

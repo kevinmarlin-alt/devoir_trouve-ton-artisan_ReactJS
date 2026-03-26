@@ -1,9 +1,9 @@
 const categoriesServices = require('../services/categories.services')
 
 exports.getAllByCategory = async (req, res) => {
-    const category = req.params.category
+    const idCategory = req.params.idCategory
     try {
-        const artisans = await categoriesServices.getAllByCategory(category)
+        const artisans = await categoriesServices.getAllByCategory(idCategory)
 
         if( artisans.length === 0 ) {
             return res.status(404)

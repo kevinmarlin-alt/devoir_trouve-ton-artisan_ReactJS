@@ -1,17 +1,25 @@
-const Artisan = require('../models/Artisan');
+const { Op } = require('sequelize');
+const { Category, Artisan, Speciality } = require('../db/mysql');
 
 exports.getCategories = () => {
-    return Artisan.findAll({ 
-            attributes: ['category'], 
-            group: 'category',
-            order: [['category', 'ASC']]
+    return Category.findAll({  
+            order: [['name', 'ASC']]
         })
 }
 
-exports.getAllByCategory = (category) => {
-    return Artisan.findAll({ 
-            attributes: ['id' ,'rate', 'name', 'speciality', 'city'],
-            where: { category: category },
-            order: [['rate', 'DESC']]
-        })
+exports.getAllByCategory = (idCategory) => {
+    return Artisan.findAll({
+        attributes: { exclude: ['speciality_id', 'top_artisan'] },
+        include: {
+            model: Speciality,
+            required: true,
+            attributes: ['name'],
+            include: {
+                model: Category,
+                required: true,
+                attributes: ['name'],
+                where: { id: idCategory }
+            }
+        }
+    })
 }
