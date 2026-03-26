@@ -1,4 +1,4 @@
--- add DROP DATABASE
+-- DROP DATABASE
 DROP DATABASE IF EXISTS `trouve_ton_artisan`;
 
 -- Création de la base de données
@@ -18,12 +18,14 @@ GRANT SELECT ON trouve_ton_artisan.* TO 'client'@'localhost';
 -- Appliquation des privilèges
 FLUSH PRIVILEGES;
 
+
+
 -- Création des tables 
 
 -- - - - - - - - - - - - 
 -- TABLE CATEGORIES
 -- - - - - - - - - - - - 
-CREATE TABLE `trouve_ton_artisan`.`categories` (
+CREATE TABLE `categories` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL UNIQUE,
     PRIMARY KEY (id)
@@ -32,10 +34,10 @@ CREATE TABLE `trouve_ton_artisan`.`categories` (
 -- - - - - - - - - - - - 
 -- TABLE SPECIALITIES
 -- - - - - - - - - - - - 
-CREATE TABLE `trouve_ton_artisan`.`specialities` (
+CREATE TABLE `specialities` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL UNIQUE,
-    `caterory_id` INT NOT NULL,
+    `category_id` INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (category_id) REFERENCES categories(id)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -43,7 +45,7 @@ CREATE TABLE `trouve_ton_artisan`.`specialities` (
 -- - - - - - - - - - - - 
 -- TABLE ARTISANS
 -- - - - - - - - - - - - 
-CREATE TABLE IF NOT EXISTS `ton_artisan`.`artisans` (
+CREATE TABLE `artisans` (
     `id` INT NOT NULL AUTO_INCREMENT, 
     `name` VARCHAR(50) NOT NULL UNIQUE,
     `speciality_id` INT NOT NULL,
