@@ -1,4 +1,4 @@
-const Artisan = require('../models/artisans');
+const Artisan = require('../models/Artisan');
 
 exports.getCategories = () => {
     return Artisan.findAll({ 

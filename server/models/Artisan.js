@@ -8,8 +8,8 @@ const Artisan = sequelize.define('artisan',
             allowNull: false,
             unique: true
         },
-        speciality: {
-            type: DataTypes.STRING(50),
+        speciality_id: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         rate: {
@@ -48,10 +48,6 @@ const Artisan = sequelize.define('artisan',
             validate: {
                 isUrl: true
             }
-        },
-        category: {
-            type: DataTypes.STRING(50),
-            allowNull: false
         },
         top_artisan: {
             type: DataTypes.BOOLEAN,
