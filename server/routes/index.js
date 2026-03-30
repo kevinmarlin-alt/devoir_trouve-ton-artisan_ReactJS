@@ -1,14 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const categoriesControllers = require('../controllers/categories.controllers')
-const artisansRoutes = require('./artisans.routes')
+const categoriesControllers = require("../controllers/categories.controllers");
+const artisansRoutes = require("./artisans.routes");
 
 // GET l'ensemble des categories disponible
-router.get('/categories', categoriesControllers.getCategories)
+router.get("/categories", categoriesControllers.getCategories);
 // GET l'ensemble des artisans par catégorie
-router.get('/categories/:idCategory/artisans', categoriesControllers.getAllByCategory);
+router.get(
+  "/categories/:idCategory/artisans",
+  categoriesControllers.getAllByCategory,
+);
 
-router.use('/artisans', artisansRoutes)
+router.use("/artisans", artisansRoutes);
 
 module.exports = router;
