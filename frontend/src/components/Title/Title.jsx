@@ -1,29 +1,35 @@
+import { Link } from 'react-router'
+
 const Title = ({ title, subTitle, arianeList = [] }) => {
   return (
-    <div className="container-fluid">
-      <div className="container-lg">
+    
+      <div className="container-lg mb-4">
         <p>
-          <a href="/">Accueil</a>{" "}
+          <Link to="/" className="text-secondary">Accueil</Link>
           {arianeList.map((item, index) => {
             return (
-              <span key={index} className="pe-2">
-                <img
-                  src="./assets/icons/arrow-right.svg"
-                  alt="fleche vers la droite"
-                  height="16"
-                  width="16"
-                />{" "}
-                {item}
-              </span>
+                <>
+                    <img
+                        src="./assets/icons/arrow-right.svg"
+                        alt="fleche vers la droite"
+                        height="16"
+                        width="16"
+                        key={'fleche'+index}
+                    
+                    />
+                    <span className="mx-2 text-primary" key={index}>
+                        {item}
+                    </span>
+                </>
             );
           })}
         </p>
-        <h1>{title}</h1>
+        <h1 className="mb-5">{title}</h1>
         <hr />
-        <h2>{subTitle}</h2>
+        <h2 className="mb-0">{subTitle}</h2>
         
       </div>
-    </div>
+
   );
 };
 

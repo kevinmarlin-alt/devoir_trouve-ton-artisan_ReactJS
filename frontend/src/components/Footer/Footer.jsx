@@ -20,7 +20,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="col-lg-8">
-              <p className="fw-bold">Lyon</p>
+              <p>Lyon</p>
               <p>
                 101 cours Charlemagne
                 <br />

@@ -11,7 +11,7 @@ mysqlDb.initClientDbConnection();
 
 app.use(
   cors({
-    origin: process.env.ORIGIN,
+    origin: '*',
     credentials: true,
   }),
 );
