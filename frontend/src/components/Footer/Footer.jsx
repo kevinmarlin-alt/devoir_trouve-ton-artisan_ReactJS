@@ -1,4 +1,4 @@
-import socialList from "../../services/data";
+import {socialList} from "../../services/data";
 
 const Footer = () => {
   return (

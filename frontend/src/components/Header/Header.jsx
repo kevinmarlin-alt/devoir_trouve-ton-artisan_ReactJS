@@ -6,7 +6,7 @@ const Header = (props) => {
 
 		
 	return (
-		<header className="shadow mb-4">
+		<header className="shadow mb-4 sticky-top bg-white">
 			<div className="container-lg">
 				<nav className="navbar navbar-expand-lg p-0">
 					{/* navbar */}

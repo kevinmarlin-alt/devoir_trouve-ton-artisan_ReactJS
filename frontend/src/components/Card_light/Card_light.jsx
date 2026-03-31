@@ -1,6 +1,5 @@
 const Card_light = (props) => {
     const rate = Math.round(parseFloat(props.rate))
-    console.log(rate)
     return (
         <div className="container border-start border-primary border-2 mx-0 mb-4 py-2 ">
             <div className="mb-3">

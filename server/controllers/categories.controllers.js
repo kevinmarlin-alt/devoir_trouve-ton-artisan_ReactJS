@@ -23,9 +23,9 @@ exports.getCategories = async (req, res) => {
   try {
     const categories = await categoriesServices.getCategories();
 
-    if (categories.length === 0) {
-      return res.status(404);
-    }
+    // if (categories.length === 0) {
+    //   return res.status(404);
+    // }
 
     res.status(200).json(categories);
   } catch (error) {

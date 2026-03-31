@@ -1,4 +1,4 @@
-const socialList = [
+export const socialList = [
   { name: "facebook", alt: "Logo Facebook", url: "#" },
   { name: "linkedin", alt: "Logo LinkedIn", url: "#" },
   { name: "youtube", alt: "Logo YouTube", url: "#" },
@@ -8,4 +8,4 @@ const socialList = [
   { name: "tiktok", alt: "Logo TikTok", url: "#" },
 ];
 
-module.exports = socialList;
+

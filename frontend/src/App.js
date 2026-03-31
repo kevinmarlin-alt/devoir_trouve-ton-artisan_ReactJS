@@ -39,7 +39,7 @@ function App() {
 			<Header categories={categories} />
 				<Routes>
 					<Route path="/" element={<Home categories={categories} />} />
-					<Route path="/categories/:idCategory" element={<Categories />} />
+					<Route path="/categories/:idCategory" element={<Categories categories={categories} />} />
 				</Routes>
 			<Footer />
 		</>

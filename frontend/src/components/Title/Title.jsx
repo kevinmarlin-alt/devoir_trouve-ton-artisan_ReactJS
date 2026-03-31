@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-const Title = ({ title, subTitle, arianeList = [] }) => {
+const Title = ({ subTitle, arianeList = [] }) => {
   return (
     
       <div className="container-lg mb-4">
@@ -24,7 +24,7 @@ const Title = ({ title, subTitle, arianeList = [] }) => {
             );
           })}
         </p>
-        <h1 className="mb-5">{title}</h1>
+        <h1 className="mb-5">Comment trouver mon artisan ?</h1>
         <hr />
         <h2 className="mb-0">{subTitle}</h2>
         

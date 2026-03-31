@@ -19,7 +19,6 @@ const Home = (props) => {
             }
 
             const data = await response.json()
-            console.log(data)
             setTopArtisans(data)
 
         } catch (err) {
@@ -33,7 +32,6 @@ const Home = (props) => {
     return (
         <main className="container-fluid">
             <Title 
-                title= "Comment trouver mon artisan ?"
                 subTitle= "1. Choisir la catégorie d’artisanat dans le menu"
                 arianeList={['Choisir la catégorie']}
             />
@@ -46,13 +44,11 @@ const Home = (props) => {
                                 <option value={category.id}>{category.name}</option>
                             )
                         })}
-                        <option value="1">Alimentation</option>
-                        <option value="2">Services</option>
                     </select>
                     <input type="submit" value="Rechercher" className="btn btn-primary"/>
                 </form>
                 <hr />
-                <h3>Nos meilleurs artisans</h3>
+                <h3 className="text-primary">Nos meilleurs artisans</h3>
                 {topArtisans.map((artisan) => {
                     return (
                         <Cardlight 
