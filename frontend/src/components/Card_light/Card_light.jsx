@@ -1,3 +1,6 @@
+import StarSolid from "../../assets/icons/star-regular.svg";
+import StarRegular from "../../assets/icons/star-solid.svg";
+
 const Card_light = (props) => {
     const rate = Math.round(parseFloat(props.rate))
     return (
@@ -8,13 +11,13 @@ const Card_light = (props) => {
                         key={i}
                         src={
                             i < rate 
-                            ? "./assets/icons/star-solid.svg"
-                            : "./assets/icons/star-regular.svg"
+                            ? <StarSolid className="me-1 icon-color_blue" />
+                            : <StarRegular className="me-1 icon-color_blue" />
                         }
                         alt="étoile"
                         height="24"
                         width="24"
-                        className="me-1"
+                        className="me-1 icon-color_blue"
                     />
                 ))}
                 <span className="badge text-secondary p-0">({props.rate})</span>

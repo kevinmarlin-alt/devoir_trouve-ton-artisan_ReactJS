@@ -5,22 +5,22 @@ const Title = ({ subTitle, arianeList = [] }) => {
     
       <div className="container-lg mb-4">
         <p>
-          <Link to="/" className="text-secondary">Accueil</Link>
+          <Link to="/" className="">Accueil</Link>
           {arianeList.map((item, index) => {
             return (
-                <>
+                <span key={item}>
                     <img
-                        src="./assets/icons/arrow-right.svg"
+                        src="/assets/icons/arrow-right.svg"
                         alt="fleche vers la droite"
                         height="16"
                         width="16"
-                        key={'fleche'+index}
+                        className='mx-2'
                     
                     />
-                    <span className="mx-2 text-primary" key={index}>
+                    <span className="text-primary">
                         {item}
                     </span>
-                </>
+                </span>
             );
           })}
         </p>

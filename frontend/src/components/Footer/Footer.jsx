@@ -7,19 +7,19 @@ const Footer = () => {
         <div className="container-lg pt-4">
           <img
             className="mb-4"
-            src="./assets/images/Logo_white.png"
+            src="/assets/images/Logo_white.png"
             alt="Logo Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
             height="75"
           />
           <div className="row mb-4">
-            <div className="col-lg-4">
+            <div className="col-lg-3">
               <p>
                 Conseil régional
                 <br />
                 Auvergne-Rhône-Alpes
               </p>
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-9">
               <p>Lyon</p>
               <p>
                 101 cours Charlemagne
@@ -41,7 +41,7 @@ const Footer = () => {
               >
                 <div className="d-flex align-items-center gap-2">
                   <img
-                    src="./assets/icons/phone.svg"
+                    src="/assets/icons/phone.svg"
                     alt="Combiné téléphonique"
                     height="20"
                     width="20"
@@ -56,7 +56,7 @@ const Footer = () => {
               </p>
               <div className="d-flex align-items-center gap-2">
                 <img
-                  src="./assets/icons/train.svg"
+                  src="/assets/icons/train.svg"
                   alt="Combiné téléphonique"
                   height="20"
                   width="20"
@@ -87,7 +87,7 @@ const Footer = () => {
         {socialList.map((social) => (
           <a key={social.name} href={social.url}>
             <img
-              src={`./assets/icons/${social.name}.svg`}
+              src={`/assets/icons/${social.name}.svg`}
               alt={social.alt}
               width="24"
               height="24"
