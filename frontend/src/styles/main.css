@@ -1,21 +1,20 @@
 @font-face {
   font-family: "Graphik";
-  src: url("../public/assets/fonts/Graphik-Regular-Trial.woff") format("woff");
+  src: url("../../public/assets/fonts/Graphik-Regular-Web.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: "Graphik";
-  src: url("../public/assets/fonts/Graphik-Bold-Trial.woff") format("woff");
+  src: url("../../public/assets/fonts/Graphik-Bold-Web.woff2") format("woff2");
   font-style: normal;
   font-weight: bold;
 }
+
 *, ::before, ::after {
   font-family: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
-  padding: 0;
-  margin: 0;
 }
 
 .btn {
@@ -41,7 +40,7 @@ h3 {
 }
 
 .bg-primary {
-  background-color: #0074C7 !important;
+  background-color: #0074C7 ;
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=index.css.map */

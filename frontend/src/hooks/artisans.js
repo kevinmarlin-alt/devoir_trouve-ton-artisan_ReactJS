@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getTopArtisans, getArtisan } from "../services/artisans"
+import { getTopArtisans, getArtisan, getArtisansByName } from "../services/artisans"
 
 export const useTopArtisans = () => {
     const [topArtisans, setTopArtisans] = useState([])
@@ -19,4 +19,15 @@ export const useArtisan = (id) => {
     }, [id]);
 
     return artisan
+} 
+
+export const useArtisansByName = (name) => {
+    const [artisansByName, setArtisansByName] = useState([])
+
+    useEffect(() => {
+        console.log(name)
+        if(name !== null) getArtisansByName(name).then(setArtisansByName);
+    }, [name]);
+
+    return artisansByName
 } 

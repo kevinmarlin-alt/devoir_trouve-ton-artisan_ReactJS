@@ -3,7 +3,7 @@ const artisansServices = require("../services/artisans.services");
 exports.getTopArtisans = async (req, res) => {
   try {
     const topArtisans = await artisansServices.getTopArtisans();
-
+    console.log(topArtisans)
     if (topArtisans.length === 0) {
       return res.status(404);
     }

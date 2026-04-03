@@ -1,4 +1,4 @@
-const { Artisan, Speciality } = require("../db/mysql");
+const { Artisan, Speciality, Category } = require("../db/mysql");
 const { Op } = require("sequelize");
 
 exports.getTopArtisans = () => {
@@ -8,6 +8,10 @@ exports.getTopArtisans = () => {
       model: Speciality,
       required: true,
       attributes: ["name"],
+      include: {
+        model: Category,
+        required: true
+      }
     },
     attributes: ["id", "rate", "name", "city"],
     order: [["rate", "DESC"]],
@@ -22,7 +26,10 @@ exports.getById = (id) => {
     include: {
       model: Speciality,
       required: true,
-      attributes: ["name"],
+      include: {
+        model: Category,
+        required: true
+      }
     },
   });
 };
@@ -34,6 +41,10 @@ exports.getByName = (name) => {
       model: Speciality,
       required: true,
       attributes: ["name"],
+      include: {
+        model: Category,
+        required: true
+      }
     },
     where: {
       name: {

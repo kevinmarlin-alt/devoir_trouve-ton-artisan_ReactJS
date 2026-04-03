@@ -1,35 +1,36 @@
 import { Link } from 'react-router'
 
-const Title = ({ subTitle, arianeList = [] }) => {
+const Title = ({ arianeList = [], titleVisible = true }) => {
   return (
     
-      <div className="container-lg mb-4">
+    <header className="container-lg mb-4">
+      <nav>
         <p>
           <Link to="/" className="">Accueil</Link>
           {arianeList.map((item, index) => {
             return (
                 <span key={item}>
                     <img
-                        src="/assets/icons/arrow-right.svg"
+                        src="/assets/icons/arrow-blue-small.svg"
                         alt="fleche vers la droite"
-                        height="16"
-                        width="16"
-                        className='mx-2'
-                    
+                        height="12"
+                        width="12"
+                        className='mx-3'
+      
                     />
-                    <span className="text-primary">
+                    <span className={index !== arianeList.length - 1 ? "text-primary" : "text-danger" }>
                         {item}
                     </span>
                 </span>
             );
           })}
         </p>
+      </nav>
+      {titleVisible &&
         <h1 className="mb-5">Comment trouver mon artisan ?</h1>
-        <hr />
-        <h2 className="mb-0">{subTitle}</h2>
-        
-      </div>
-
+      }
+      {/* <h2 className="mb-0 px-lg-5">{subTitle}</h2> */}
+    </header>
   );
 };
 

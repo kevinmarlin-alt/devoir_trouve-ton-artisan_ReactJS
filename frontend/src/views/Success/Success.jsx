@@ -4,21 +4,31 @@ import Title from "../../components/Title/Title"
 
 const Success = () => {
     return (
-        <main className="container-fluid mb-5">
-            <Title 
-                subTitle="4. Une réponse sera apportée sous 48h"
-                arianeList={['Choisir la catégorie', 'Choiri un artisan', 'Contacter un artisan', 'Message envoyé']}
+        <>
+            <meta
+                name="description"
+                content="Web site created using create-react-app"
             />
-            <div className="container-lg">
-                <img 
-                    src="/assets/images/envoyer.jpg" 
-                    alt="Illustration monochrome bleu d'une enveloppe avec deux personnages et un chat"
+            <title>Trouve ton artisan ! - Message envoyé</title>
+            <main className="container-fluid mb-5">
+                <Title 
+                    subTitle="4. Une réponse sera apportée sous 48h"
+                    arianeList={['Choisir la catégorie', 'Choiri un artisan', 'Contacter un artisan', 'Message envoyé']}
                 />
-                <hr />
-                <p>Si vous le souhaitez, vous pouvez effectuer une nouvelle recherche, en cliquant <Link to="/">ici</Link>.</p>
-            </div>
+                <section className="container-lg">
+                    <h2 class="mb-4">4. Une réponse sera apportée sous 48h.</h2>
+                    <img 
+                        src="/assets/images/envoyer.jpg" 
+                        alt="Illustration monochrome bleu d'une enveloppe avec deux personnages et un chat"
+                        style={{width: '100%', maxWidth: 700}}
+                        className='mx-auto'
+                    />
+                    <hr />
+                    <p>Si vous le souhaitez, vous pouvez effectuer une nouvelle recherche, en cliquant <Link to="/">ici</Link>.</p>
+                </section>
 
-        </main>
+            </main>
+        </>
     )
 }
 

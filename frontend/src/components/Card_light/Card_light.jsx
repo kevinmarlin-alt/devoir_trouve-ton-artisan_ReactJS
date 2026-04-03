@@ -1,23 +1,33 @@
-import StarSolid from "../../assets/icons/star-regular.svg";
-import StarRegular from "../../assets/icons/star-solid.svg";
+import { useNavigate } from "react-router";
+
+import './Card_light.css'
 
 const Card_light = (props) => {
+    const navigate = useNavigate();
+
+    const handleClick = (e) => {
+        e.stopPropagation()
+        navigate(`/categories/${props.idCategory}/artisans/${props.idArtisan}`);
+    };
+
     const rate = Math.round(parseFloat(props.rate))
+
     return (
-        <div className="container border-start border-primary border-2 mx-0 mb-4 py-2 ">
+        <div role="button" id="card_light" className="container border-start border-primary border-2 mx-0 mb-4 py-2" onClick={handleClick}>
             <div className="mb-3">
+                {/* Note avec 5 étoiles maximum */}
                 {[...Array(5)].map((_, i) => (
                     <img 
-                        key={i}
+                        key={`${props.name}${i}`}
                         src={
                             i < rate 
-                            ? <StarSolid className="me-1 icon-color_blue" />
-                            : <StarRegular className="me-1 icon-color_blue" />
+                            ? "/assets/icons/star-solid.svg"
+                            : '/assets/icons/star-regular.svg'
                         }
                         alt="étoile"
                         height="24"
                         width="24"
-                        className="me-1 icon-color_blue"
+                        className="me-1"
                     />
                 ))}
                 <span className="badge text-secondary p-0">({props.rate})</span>

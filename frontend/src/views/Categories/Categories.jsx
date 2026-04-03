@@ -8,35 +8,47 @@ const Categories = (props) => {
     const { idCategory } = useParams();
 
     const artisans = useArtisansByCategory(idCategory)
-
+    console.log(artisans)
     const [category] = props.categories.filter((category) => {
         return category.id === parseInt(idCategory)
     } )
 
     return (
-        
-        <main className="container-fluid">
-            <Title 
-                
-                subTitle= "2. Chrosir un artisan."
-                arianeList={['Choisir la catégorie', 'Choiri un artisan']}
+        <>
+            <meta
+                name="description"
+                content="Web site created using create-react-app"
             />
-            <div className="container-lg">
-                <h3 className="fs-6">Liste des artisans dans la catégorie {category.name}</h3>
-                {artisans.map((artisan) => {
-                    return (
-                        <Cardlight
-                            key={artisan.id}
-                            name={artisan.name}
-                            speciality={artisan.speciality.name}
-                            city={artisan.city}
-                            rate={artisan.rate}
-                        />
-                    )
-                })}
-            </div>
+            <title>Trouve ton artisan ! - Categories</title>
             
-        </main>
+            <main className="container-fluid">
+                <Title 
+                    
+                    subTitle= "2. Chrosir un artisan."
+                    arianeList={['Choisir la catégorie', 'Choiri un artisan']}
+                />
+                <div className="container-lg">
+                    <h2 class="mb-4">2. Choisir un artisan.</h2>
+                    <section>
+                        <h3 className="fs-6">Liste des artisans dans la catégorie {category.name}</h3>
+                        {artisans.map((artisan) => {
+                            return (
+                                <Cardlight
+                                    key={artisan.id}
+                                    name={artisan.name}
+                                    speciality={artisan.speciality.name}
+                                    city={artisan.city}
+                                    rate={artisan.rate}
+                                    idCategory={artisan.speciality.category.id}
+                                    idArtisan={artisan.id}
+                                />
+                            )
+                        })}
+                    </section>
+                </div>
+                
+            </main>
+        </>
     )
 }
 

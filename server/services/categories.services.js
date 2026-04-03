@@ -1,4 +1,3 @@
-const { Op } = require("sequelize");
 const { Category, Artisan, Speciality } = require("../db/mysql");
 
 exports.getCategories = () => {
@@ -13,11 +12,9 @@ exports.getAllByCategory = (idCategory) => {
     include: {
       model: Speciality,
       required: true,
-      attributes: ["name"],
       include: {
         model: Category,
         required: true,
-        attributes: ["name"],
         where: { id: idCategory },
       },
     },

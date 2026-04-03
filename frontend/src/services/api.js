@@ -10,7 +10,8 @@ const apiFetch = async (endpoint, options = {}) => {
   });
 
   if (!response.ok) {
-    throw new Error("Erreur API");
+    // throw new Error("Erreur API");
+    return {message: "Il n'y a pas d'artisans pour votre recherche !"}
   }
 
   return response.json();

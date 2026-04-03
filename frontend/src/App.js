@@ -8,8 +8,9 @@ import Categories from "./views/Categories/Categories";
 import Artisan from "./views/Artisan/Artisan";
 import Success from "./views/Success/Success";
 import Error404 from "./views/Error404/Error404";
+import Pending from "./views/Pending/Pending";
 
-import "./App.css";
+import './styles/main.css'
 
 function App() {
 
@@ -21,9 +22,9 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home categories={categories} />} />
 					<Route path="/categories/:idCategory" element={<Categories categories={categories} />} />
-					{/* <Route path="/categories/:idCategory/artisans/:id" element={<Artisan />} /> */}
-					<Route path="/artisans/:id" element={<Artisan />} />
-					<Route path="/artisans/:id/success" element={<Success />} />
+					<Route path="/categories/:idCategory/artisans/:idArtisan" element={<Artisan />} />
+					<Route path="/categories/:idCategory/artisans/:idArtisan/success" element={<Success />} />
+					<Route path="/pending" element={<Pending />} />
 					<Route path="*" element={<Error404 />} />
 				</Routes>
 			<Footer />
