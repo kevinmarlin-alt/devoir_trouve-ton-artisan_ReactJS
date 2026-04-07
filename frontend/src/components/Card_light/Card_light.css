@@ -1,5 +1,9 @@
-#card_light:hover {
+.card-light:hover {
   background-color: #f1f8fc;
+}
+
+.border-dark-blue {
+  border-color: #00497c !important;
 }
 
 /*# sourceMappingURL=Card_light.css.map */

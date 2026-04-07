@@ -1,12 +1,12 @@
 import { Link } from 'react-router'
 
-const Title = ({ arianeList = [], titleVisible = true }) => {
+const Title = ({ arianeList = [], titleVisible = true, title="Comment trouver mon artisan ?" }) => {
   return (
     
     <header className="container-lg mb-4">
       <nav>
-        <p>
-          <Link to="/" className="">Accueil</Link>
+        <p className='lh-lg'>
+          <Link to="/" className="text-blue_bright">Accueil</Link>
           {arianeList.map((item, index) => {
             return (
                 <span key={item}>
@@ -18,7 +18,7 @@ const Title = ({ arianeList = [], titleVisible = true }) => {
                         className='mx-3'
       
                     />
-                    <span className={index !== arianeList.length - 1 ? "text-primary" : "text-danger" }>
+                    <span className={index !== arianeList.length - 1 ? "text-blue_bright" : "text-dark-blue" }>
                         {item}
                     </span>
                 </span>
@@ -27,7 +27,7 @@ const Title = ({ arianeList = [], titleVisible = true }) => {
         </p>
       </nav>
       {titleVisible &&
-        <h1 className="mb-5">Comment trouver mon artisan ?</h1>
+        <h1 className="mb-5">{title}</h1>
       }
       {/* <h2 className="mb-0 px-lg-5">{subTitle}</h2> */}
     </header>

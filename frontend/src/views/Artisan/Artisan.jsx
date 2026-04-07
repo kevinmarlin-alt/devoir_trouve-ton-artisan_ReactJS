@@ -49,31 +49,20 @@ const Artisan = () => {
             <main className='container-fluid'>
                 <Title
                     arianeList={[
-                        "Choisir la catégorie",
-                        "Choiri un artisan",
+                        "Choisir une catégorie",
+                        "Choisir un artisan",
                         "Contacter un artisan",
                     ]}
                 />
-                <div className='container-lg mb-5 px-lg-5'>
-                    <hr
-                        className=''
-                        style={{
-                            width: "2rem",
-                            borderColor: "#0074c7",
-                            margin: 0,
-                            marginBottom: "1.5rem",
-                            borderWidth: 6,
-                            opacity: 100,
-                        }}
-                    />
-                        
+                <div className='container-lg mb-5 ps-lg-5'>
+                    <hr className="hr hr-blue"/>
                     <section>
                         <h2 className='mb-4'>
                             3. Le contacter via le formulaire de contact.
                         </h2>
                         <div className='mb-5'>
-                            <div className='row g-5'>
-                                <div className='col-lg-5'>
+                            <div className='row '>
+                                <div className='col-lg-5 mb-4'>
                                     <img
                                         src={`/assets/images/artisans/${speciality?.src}`}
                                         className=' object-fit-cover'
@@ -81,72 +70,64 @@ const Artisan = () => {
                                         style={{ width: "100%", maxHeight: "350px" }} // a remplacer par une feuille de style
                                     />
                                 </div>
-                                <div className='col-lg-7 ps-4 py-3'>
+                                <div className='col-lg-7'>
                                 
-                                        <div className='mb-4'>
-                                            {/* Note avec 5 étoiles maximum */}
-                                            {[...Array(5)].map((_, i) => (
-                                                <img 
-                                                    key={i}
-                                                    src={
-                                                        i < rate 
-                                                        ? "/assets/icons/star-solid.svg"
-                                                        : '/assets/icons/star-regular.svg'
-                                                    }
-                                                    alt="étoile"
-                                                    height="24"
-                                                    width="24"
-                                                    className="me-1"
-                                                />
-                                            ))}
-                                            <span className='badge text-secondary p-0'>
-                                                ({artisan?.rate})
-                                            </span>
-                                        </div>
-                                        <p className=''>{artisan?.name}</p>
-                                        <p className=''>
-                                            {artisan?.speciality?.name}
-                                        </p>
-                                        <p className=''>{artisan?.city}</p>
-                                        <p>A propos</p>
-                                        <p className=''>{artisan?.about}</p>
-                                        {artisan?.website && (
-                                            <a
-                                                href={artisan.website}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                                className='btn btn-primary py-1 px-3'
-                                            >
-                                                <div className='d-flex align-items-center'>
-                                                    <p className='mb-0'>
-                                                        Voir le site internet
-                                                    </p>
+                                        <div class="container-fluid border-start border-dark-blue border-3 py-2 ps-4">
+                                            <div className='mb-4'>
+                                                {/* Note avec 5 étoiles maximum */}
+                                                {[...Array(5)].map((_, i) => (
                                                     <img
-                                                        src='/assets/icons/extern-white.svg'
-                                                        alt='test'
-                                                        className='ms-3'
+                                                        key={i}
+                                                        src={
+                                                            i < rate
+                                                            ? "/assets/icons/star-solid-blue.svg"
+                                                            : '/assets/icons/star-regular-blue.svg'
+                                                        }
+                                                        alt="étoile"
+                                                        height="24"
+                                                        width="24"
+                                                        className="me-1"
                                                     />
-                                                </div>
-                                            </a>
-                                        )}
+                                                ))}
+                                                <span className='badge text-secondary p-0'>
+                                                    ({artisan?.rate}/5)
+                                                </span>
+                                            </div>
+                                            <p className='mb-0 fs-1 fw-bold'>{artisan?.name}</p>
+                                            <p className=''>
+                                                {artisan?.speciality?.name}
+                                            </p>
+                                            <p className=''>{artisan?.city}</p>
+                                            <p className="mb-0">A propos</p>
+                                            <p className=''>{artisan?.about}</p>
+                                            {artisan?.website && (
+                                                <a
+                                                    href={artisan.website}
+                                                    target='_blank'
+                                                    rel='noopener noreferrer'
+                                                    className='btn btn-primary py-1 px-3'
+                                                >
+                                                    <div className='d-flex align-items-center'>
+                                                        <p className='mb-0'>
+                                                            Voir le site internet
+                                                        </p>
+                                                        <img
+                                                            src='/assets/icons/extern-white.svg'
+                                                            alt='test'
+                                                            className='ms-3'
+                                                        />
+                                                    </div>
+                                                </a>
+                                            )}
+                                        </div>
                                 
                                 </div>
                             </div>
                         </div>
                     
-                        <hr
-                            className=''
-                            style={{
-                                width: "2rem",
-                                borderColor: "#82b864",
-                                margin: 0,
-                                marginBottom: "1.5rem",
-                                borderWidth: 6,
-                                opacity: 100,
-                            }}
-                        />
+                        <hr className="hr hr-green"/>
                         <section>
-                            <h3 className=''>Formulaire de contact</h3>
+                            <h3 className='mb-4'>Formulaire de contact</h3>
                             <form action="#" method='GET' className='col-lg-8' onSubmit={handleClickSend}>
                                 <div className='mb-4'>
                                     <label htmlFor='name' className='form-label'>

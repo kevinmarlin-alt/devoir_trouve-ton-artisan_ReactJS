@@ -2,6 +2,18 @@ import { Link } from 'react-router'
 import {socialList} from "../../services/data";
 
 const Footer = () => {
+
+  const socialIcons = document.querySelectorAll('.social-row a img')
+
+  socialIcons.forEach((socialIcon) => {
+    const socialName = socialIcon.title
+    socialIcon.addEventListener('mouseover', () => {
+      socialIcon.src = `/assets/icons/social-${socialName}-blue.svg`
+    })
+    socialIcon.addEventListener('mouseout', () => {
+      socialIcon.src = `/assets/icons/social-${socialName}-gray.svg`
+    })
+  })
   return (
     <footer className=" text-white">
       <div className="container-fluid" style={{backgroundColor: "#0074c7"}}>
@@ -36,7 +48,7 @@ const Footer = () => {
               </p>
               <a
                 href="tel:+33(0)426734000"
-                className="text-decoration-none text-reset"
+                className="text-decoration-none text-reset nav nav-link"
               >
                 <div className="d-flex align-items-center gap-2 mb-3">
                   <img
@@ -65,33 +77,33 @@ const Footer = () => {
           </div>
           <hr />
           <nav>
-            <ul className='nav justify-content-lg-center' >
+            <ul className='nav justify-content-lg-center gap-0 column-gap-3' >
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Mentions légales</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Mentions légales</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Données personnelles</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Données personnelles</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Accessibilité : partiellement conforme</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Accessibilité : partiellement conforme</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Presse</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Presse</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Marchés publics</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Marchés publics</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Venir à la Région</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Venir à la Région</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Contacts</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Contacts</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Politique des cookies</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Politique des cookies</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link text-reset' to='/pending'>Gestion des cookies</Link>
+                  <Link className='nav-link text-reset px-0' to='/pending'>Gestion des cookies</Link>
                 </li>
             </ul>
           </nav>
@@ -105,10 +117,12 @@ const Footer = () => {
         {socialList.map((social) => (
           <a key={social.name} href={social.url} target="_blank" rel="noreferrer">
             <img
-              src={`/assets/icons/${social.name}.svg`}
+              src={`/assets/icons/social-${social.name}-gray.svg`}
               alt={social.alt}
               width="24"
               height="24"
+              className='socialIcon'
+              title={social.name}
             />
           </a>
         ))}

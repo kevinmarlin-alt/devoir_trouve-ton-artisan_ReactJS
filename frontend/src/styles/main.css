@@ -1,16 +1,15 @@
 @font-face {
   font-family: "Graphik";
-  src: url("../../public/assets/fonts/Graphik-Regular-Web.woff2") format("woff2");
+  src: url("../../public/assets/fonts/Graphik-Regular-Trial.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: "Graphik";
-  src: url("../../public/assets/fonts/Graphik-Bold-Web.woff2") format("woff2");
+  src: url("../../public/assets/fonts/Graphik-Bold-Trial.woff") format("woff");
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 *, ::before, ::after {
   font-family: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -21,26 +20,50 @@
   border-radius: 50px;
   padding: 3px 20px;
 }
-
 .btn-primary {
+  background-color: #0074C7;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #00497c;
+}
+.btn-primary:active {
   background-color: #0074C7;
 }
 
 h1, h2 {
   color: #00497c;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 h3 {
   color: #0074C7;
 }
 
-.icon-color_blue {
-  fill: #0074C7;
+.hr {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  border-width: 6px;
+  opacity: 100;
+  width: 2rem;
+}
+.hr-blue {
+  border-color: #0074C7;
+}
+.hr-green {
+  border-color: #82b864;
 }
 
-.bg-primary {
-  background-color: #0074C7 ;
+.text-dark-blue {
+  color: #00497c;
 }
 
-/*# sourceMappingURL=index.css.map */
+.text-blue_bright {
+  color: #0074C7;
+}
+
+.border-dark-blue {
+  border-color: #00497c !important;
+}
+
+/*# sourceMappingURL=main.css.map */

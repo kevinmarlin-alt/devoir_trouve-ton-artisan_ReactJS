@@ -5,11 +5,13 @@ import Title from "../../components/Title/Title"
 const Pending = () => {
     return (
         <main 
-            className="d-flex flex-column justify-content-center align-items-center my-5"
+            className="container-fluid mb-5"
         >
             <Title titleVisible={false} />
-            <p>Page en construction</p>
-            <Link to="/"><button type="button" className="btn btn-primary">Revenir à la page d'accueil</button></Link>
+            <div class="container-lg ps-lg-5 d-flex flex-column justify-content-center align-items-center ">
+                <p>Page en construction</p>
+                <Link to="/"><button type="button" className="btn btn-primary">Revenir à la page d'accueil</button></Link>
+            </div>
 
         </main>
     )
