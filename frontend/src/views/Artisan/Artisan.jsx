@@ -34,10 +34,40 @@ const Artisan = () => {
 		);
 	}
 
-    function handleClickSend(e) {
-        e.preventDefault()
-        navigate(`/categories/${idCategory}/artisans/${idArtisan}/success`)
+    const form = document.querySelector('section form')
+
+    function checkValidation() {
+        const textArea = form.querySelector("textarea")
+        const inputs = form.querySelectorAll("input")
+        const select = form.querySelector('select')
+        console.log(select)
+        inputs.forEach(input => {
+            input.classList.remove("is-valid", "is-invalid")
+            // console.log(input.checkValidity())
+            input.checkValidity() ? input.classList.add("is-valid") : input.classList.add("is-invalid") 
+        })
+        
+        select.classList.remove("is-valid", "is-invalid")
+        select.checkValidity() ? select.classList.add("is-valid") : select.classList.add("is-invalid") 
+        
+        textArea.classList.remove("is-valid", "is-invalid")
+        textArea.checkValidity() ? textArea.classList.add("is-valid") : textArea.classList.add("is-invalid")
     }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        checkValidation()
+        
+        if(!form.checkValidity()) {
+            return
+        }
+        
+        navigate(`/categories/${idCategory}/artisans/${idArtisan}/success`)
+
+    } 
+
 
 	return (
         <>
@@ -72,7 +102,7 @@ const Artisan = () => {
                                 </div>
                                 <div className='col-lg-7'>
                                 
-                                        <div class="container-fluid border-start border-dark-blue border-3 py-2 ps-4">
+                                        <div className="container-fluid border-start border-dark-blue border-3 py-2 ps-4">
                                             <div className='mb-4'>
                                                 {/* Note avec 5 étoiles maximum */}
                                                 {[...Array(5)].map((_, i) => (
@@ -127,20 +157,20 @@ const Artisan = () => {
                     
                         <hr className="hr hr-green"/>
                         <section>
+                            {/* FOMULAIRE DE CONTACT */}
                             <h3 className='mb-4'>Formulaire de contact</h3>
-                            <form action="#" method='GET' className='col-lg-8' onSubmit={handleClickSend}>
+                            <form action="#" className='col-lg-8  needs-validation' onSubmit={handleSubmit} noValidate>
                                 <div className='mb-4'>
-                                    <label htmlFor='name' className='form-label'>
-                                        Nom
-                                    </label>
-                                    <input
-                                        type='text'
-                                        name='name'
-                                        id='name'
-                                        className='form-control'
-                                        placeholder='Votre nom'
-                                        // required
+                                    <label htmlFor='name' className='form-label'>Nom</label>
+                                    <input 
+                                        type='text' 
+                                        name='name' 
+                                        id='name' 
+                                        className='form-control' 
+                                        placeholder='Votre nom' 
+                                        required 
                                     />
+                                    <p class="invalid-feedback">Veuillez saisir votre nom </p>
                                 </div>
                                 <div className='mb-4'>
                                     <label htmlFor='email' className='form-label'>
@@ -152,8 +182,9 @@ const Artisan = () => {
                                         id='email'
                                         className='form-control'
                                         placeholder='Votre adresse email'
-                                        // required
+                                        required
                                     />
+                                    <p class="invalid-feedback">Veuillez saisir une adresse email valide</p>
                                 </div>
                                 <div className='mb-4'>
                                     <label htmlFor='email' className='form-label'>
@@ -163,7 +194,7 @@ const Artisan = () => {
                                         name='subject'
                                         id='subject'
                                         className='form-select'
-                                        // required
+                                        required
                                     >
                                         <option defaultValue='0' disabled>
                                             Choisissez un objet dans la liste
@@ -178,13 +209,14 @@ const Artisan = () => {
                                         Message
                                     </label>
                                     <textarea
-                                        className='form-control mb-4'
+                                        className='form-control'
                                         name='message'
                                         id='message'
                                         rows='15'
                                         placeholder='Votre message...'
-                                        // required
+                                        required
                                     ></textarea>
+                                    <p class="invalid-feedback">Veuillez saisir un message</p>
                                 </div>
                                 <input
                                     type='submit'
