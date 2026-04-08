@@ -1,0 +1,12 @@
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+@media (width > 992px) {
+  .navbar-brand img {
+    height: 56px;
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */
