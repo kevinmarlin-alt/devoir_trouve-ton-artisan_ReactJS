@@ -72,8 +72,8 @@ const Header = (props) => {
 							<img
 								src="assets/images/logo_light.png"
 								alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
-								height="40px"
-								// width= "208"
+								height="175px"
+								width= "749"
 							/>
 						</Link>
 		
