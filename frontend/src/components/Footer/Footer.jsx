@@ -1,6 +1,8 @@
 import { Link } from 'react-router'
 import {socialList} from "../../services/data";
 
+import './Footer.css'
+
 const Footer = () => {
 
   const socialIcons = document.querySelectorAll('.social-row a img')
