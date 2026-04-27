@@ -3,6 +3,11 @@
   width: auto;
 }
 
+header img ~ p {
+  font-size: 0.8rem;
+  color: #0074C7;
+}
+
 @media (width > 992px) {
   .navbar-brand img {
     height: 56px;

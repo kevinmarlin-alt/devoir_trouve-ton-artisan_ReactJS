@@ -16,6 +16,10 @@
   font-weight: 400;
 }
 
+*:focus {
+  outline: 4px solid #cd2c2f !important;
+}
+
 .btn {
   border-radius: 50px;
   padding: 3px 20px;

@@ -1,9 +1,15 @@
+.card-light {
+  text-align: start;
+  border: none;
+  background-color: #fff;
+  border-left: 4px solid #00497c;
+  width: 100%;
+}
 .card-light:hover {
   background-color: #f1f8fc;
 }
-
-.border-dark-blue {
-  border-color: #00497c !important;
+.card-light:focus {
+  outline: 4px solid #cd2c2e;
 }
 
 /*# sourceMappingURL=Card_light.css.map */

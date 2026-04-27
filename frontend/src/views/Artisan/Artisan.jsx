@@ -170,7 +170,7 @@ const Artisan = () => {
                                         placeholder='Votre nom' 
                                         required 
                                     />
-                                    <p class="invalid-feedback">Veuillez saisir votre nom </p>
+                                    <p className="invalid-feedback">Veuillez saisir votre nom </p>
                                 </div>
                                 <div className='mb-4'>
                                     <label htmlFor='email' className='form-label'>
@@ -184,7 +184,7 @@ const Artisan = () => {
                                         placeholder='Votre adresse email'
                                         required
                                     />
-                                    <p class="invalid-feedback">Veuillez saisir une adresse email valide</p>
+                                    <p className="invalid-feedback">Veuillez saisir une adresse email valide</p>
                                 </div>
                                 <div className='mb-4'>
                                     <label htmlFor='email' className='form-label'>
@@ -216,7 +216,7 @@ const Artisan = () => {
                                         placeholder='Votre message...'
                                         required
                                     ></textarea>
-                                    <p class="invalid-feedback">Veuillez saisir un message</p>
+                                    <p className="invalid-feedback">Veuillez saisir un message</p>
                                 </div>
                                 <input
                                     type='submit'
