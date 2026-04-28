@@ -79,7 +79,7 @@ const Artisan = () => {
         <>
             <meta
                 name="description"
-                content="Web site created using create-react-app"
+                content="Vous trouverez ici les détails d'informations relatives à un artisan de votre région."
             />
             <title>Trouve ton artisan ! - Artisan</title>
             <main className='container-fluid'>

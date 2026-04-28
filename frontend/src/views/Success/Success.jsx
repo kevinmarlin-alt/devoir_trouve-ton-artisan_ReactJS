@@ -7,7 +7,7 @@ const Success = () => {
         <>
             <meta
                 name="description"
-                content="Web site created using create-react-app"
+                content="Cette page vous informe de la réussite de l'envoie de votre message à l'artisan que vous avez souhaitez solicité."
             />
             <title>Trouve ton artisan ! - Message envoyé</title>
             <main className="container-fluid mb-5">
