@@ -40,14 +40,12 @@ const Header = (props) => {
 	}
 
 	function closeSearch(e) {
-		console.log("test")
 		clearSearch()
 		if(collapseSearch.classList.contains('show')) collapseSearch.classList.remove('show')
 	}
 	
 
 	function HandleClickMenu() {
-		console.log("test")
 		btnMenu.classList.toggle("open")
 
 		btnMenu.classList.contains("open") 

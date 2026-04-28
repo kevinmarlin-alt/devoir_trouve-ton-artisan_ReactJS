@@ -10,13 +10,12 @@ const Home = (props) => {
     const topArtisans = useTopArtisans()
 
     const form = document.querySelector('section form')
-    console.log(form)
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const select = form.querySelector('select')
         const idCategory  = select.value
-        console.log(idCategory)
 
         select.classList.remove("is-valid", "is-invalid")
 
@@ -43,7 +42,7 @@ const Home = (props) => {
                         <hr className="hr hr-blue"/>
                         <h2 className="mb-4">1. Choisir la catégorie d’artisanat dans le menu.</h2>
                         <form action="#" className="mb-4 col-lg-3" onSubmit={handleSubmit} noValidate>
-                            <select name="idCategory" id="idCategory" className="form-select p-1 mb-4">
+                            <select name="idCategory" id="idCategory" className="form-select p-1 mb-4" aria-label="idCategory">
                                 <option value='#' defaultValue="#" disabled>Sélectionez une catégorie</option>
                                 {props.categories.map((category) => {
                                     return (
@@ -52,7 +51,7 @@ const Home = (props) => {
                                 })}
                             </select>
                             <p className="invalid-feedback">Veuillez selectionner une catégorie</p>
-                            <input type="submit" value="Rechercher" className="btn btn-primary"/>
+                            <button className="btn btn-primary">Rechercher</button>
                         </form>
                         <hr className="hr hr-green"/>
                         <section>

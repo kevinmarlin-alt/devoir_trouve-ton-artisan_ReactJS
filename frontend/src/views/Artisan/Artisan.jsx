@@ -4,6 +4,8 @@ import { specialities } from "../../services/data";
 
 import Title from "../../components/Title/Title";
 
+import "./Artisan.css"
+
 const Artisan = () => {
     const navigate = useNavigate()
 	const { idArtisan, idCategory } = useParams();
@@ -14,7 +16,7 @@ const Artisan = () => {
 	);
 
     const rate = Math.round(parseFloat(artisan.rate))
-	console.log(artisan);
+	
 
 	if (!artisan) {
 		return (
@@ -40,10 +42,14 @@ const Artisan = () => {
         const textArea = form.querySelector("textarea")
         const inputs = form.querySelectorAll("input")
         const select = form.querySelector('select')
-        console.log(select)
         inputs.forEach(input => {
             input.classList.remove("is-valid", "is-invalid")
-            // console.log(input.checkValidity())
+
+            if(input.id === "name") {
+                const regex = /^[\p{L}\s]+$/u;
+                regex.test(input.value) ? input.classList.add("is-valid") : input.classList.add("is-invalid")  
+            }
+            
             input.checkValidity() ? input.classList.add("is-valid") : input.classList.add("is-invalid") 
         })
         
@@ -94,10 +100,11 @@ const Artisan = () => {
                             <div className='row '>
                                 <div className='col-lg-5 mb-4'>
                                     <img
+                                        id="imgArtisan"
                                         src={`/assets/images/artisans/${speciality?.src}`}
-                                        className=' object-fit-cover'
+                                        className='object-fit-cover'
                                         alt={speciality?.alt}
-                                        style={{ width: "100%", maxHeight: "350px" }} // a remplacer par une feuille de style
+                                        //style={{ width: "100%", maxHeight: "350px" }} // a remplacer par une feuille de style
                                     />
                                 </div>
                                 <div className='col-lg-7'>
@@ -143,7 +150,7 @@ const Artisan = () => {
                                                         </p>
                                                         <img
                                                             src='/assets/icons/extern-white.svg'
-                                                            alt='test'
+                                                            alt=''
                                                             className='ms-3'
                                                         />
                                                     </div>
@@ -170,7 +177,7 @@ const Artisan = () => {
                                         placeholder='Votre nom' 
                                         required 
                                     />
-                                    <p className="invalid-feedback">Veuillez saisir votre nom </p>
+                                    <p className="invalid-feedback" role="alert">Veuillez saisir votre nom, uniquement avec des lettres (pas de chiffres ni de caractères spéciaux)</p>
                                 </div>
                                 <div className='mb-4'>
                                     <label htmlFor='email' className='form-label'>
@@ -184,10 +191,10 @@ const Artisan = () => {
                                         placeholder='Votre adresse email'
                                         required
                                     />
-                                    <p className="invalid-feedback">Veuillez saisir une adresse email valide</p>
+                                    <p className="invalid-feedback" role="alert">Veuillez saisir une adresse email valide</p>
                                 </div>
                                 <div className='mb-4'>
-                                    <label htmlFor='email' className='form-label'>
+                                    <label htmlFor='subject' className='form-label'>
                                         Object
                                     </label>
                                     <select
@@ -216,13 +223,15 @@ const Artisan = () => {
                                         placeholder='Votre message...'
                                         required
                                     ></textarea>
-                                    <p className="invalid-feedback">Veuillez saisir un message</p>
+                                    <p className="invalid-feedback" role="alert">Veuillez saisir un message</p>
                                 </div>
-                                <input
+                                <button
                                     type='submit'
                                     value='Envoyer'
                                     className='btn btn-primary'
-                                />
+                                >
+                                    Envoyer
+                                </button>
                             </form>
                         </section>
                     </section>
