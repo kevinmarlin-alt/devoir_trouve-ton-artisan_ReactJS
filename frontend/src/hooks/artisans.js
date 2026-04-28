@@ -25,7 +25,7 @@ export const useArtisansByName = (name) => {
     const [artisansByName, setArtisansByName] = useState([])
 
     useEffect(() => {
-        console.log(name)
+        
         if(name !== null) getArtisansByName(name).then(setArtisansByName);
     }, [name]);
 

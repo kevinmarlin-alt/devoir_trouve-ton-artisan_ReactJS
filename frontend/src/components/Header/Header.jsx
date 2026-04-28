@@ -12,13 +12,9 @@ const Header = (props) => {
 	useEffect(() => {
 		const searchElement = document.getElementById('search')
 		const handleSearch = (e) => {
-			console.log(e.target.value)
-			// if(e.target.value !== "") {
-				setName(e.target.value)
-			// 	return
-			// }
-			
+			setName(e.target.value)
 		}
+
 		searchElement.addEventListener('input', handleSearch)
 		
 		return () => {
@@ -31,12 +27,23 @@ const Header = (props) => {
 	const btnMenu = document.getElementById('nav__img-menu')
 	const searchWrapper = document.getElementById('searchWrapper')
 	const searchInput = document.getElementById('search')
+	const navbarLinks = document.getElementById('navbarLinks')
 	
 	function clearSearch(e) {
 		searchWrapper.innerHTML = ""
 		searchInput.value = ""
 	}
 
+	function closeMenu() {
+		HandleClickMenu()
+		navbarLinks.classList.remove('show')
+	}
+
+	function closeSearch(e) {
+		clearSearch()
+		if(collapseSearch.classList.contains('show')) collapseSearch.classList.remove('show')
+	}
+	
 
 	function HandleClickMenu() {
 		btnMenu.classList.toggle("open")
@@ -44,14 +51,17 @@ const Header = (props) => {
 		btnMenu.classList.contains("open") 
 			? btnMenu.src = '/assets/icons/cross-blue.svg' 
 			: btnMenu.src = "/assets/icons/menu-blue.svg"
-		
+			
+		clearSearch()
+
 		if(collapseSearch.classList.contains('show')) collapseSearch.classList.remove('show')
 
-		clearSearch()
+		
 		
 	}
 
 	const collapseLinks = document.getElementById('navbarLinks')
+
 	function handleClickSearch() {
 		if(collapseLinks.classList.contains('show')) {
 			collapseLinks.classList.remove('show')
@@ -104,7 +114,7 @@ const Header = (props) => {
 									width="24"
 									onClick={HandleClickMenu}
 								/>
-								<p className="mb-0 pt-1" style={{fontSize: '0.8rem', color: '#0074c7'}}>Menu</p>
+								<p className="mb-0 pt-1">Menu</p>
 							</div>
 						</div>
 					</div>
@@ -151,7 +161,7 @@ const Header = (props) => {
 										{props.categories.map((category) => {
 											return (
 											<li className="nav-item m-2" key={category.id}>
-												<NavLink to={`/categories/${category.id}`} className="nav-link text-black fw-normal px-0" >{category.name}</NavLink>
+												<NavLink to={`/categories/${category.id}`} className="nav-link text-black fw-normal px-0" onClick={closeMenu}>{category.name} </NavLink>
 											</li>)
 										})}
 									</ul>
@@ -167,7 +177,7 @@ const Header = (props) => {
 								artisansByName.map((artisan) => {
 									const idCategory = artisan.speciality.category.id
 									return (
-									<li className="nav-item" onClick={HandleClickMenu}>
+									<li className="nav-item" onClick={closeSearch} key={artisan.id}>
 										<Cardlight
 											key={artisan.id}
 											name={artisan.name}

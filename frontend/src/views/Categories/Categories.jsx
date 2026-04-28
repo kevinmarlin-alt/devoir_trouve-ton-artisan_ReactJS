@@ -8,7 +8,6 @@ const Categories = (props) => {
     const { idCategory } = useParams();
 
     const artisans = useArtisansByCategory(idCategory)
-    console.log(artisans)
     const [category] = props.categories.filter((category) => {
         return category.id === parseInt(idCategory)
     } )

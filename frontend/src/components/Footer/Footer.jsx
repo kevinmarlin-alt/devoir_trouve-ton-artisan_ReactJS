@@ -26,7 +26,7 @@ const Footer = () => {
             alt="Logo Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
             height="75"
           />
-          <div className="row mb-4">
+          <div className="row">
             <div className="col-lg-3">
               <p>
                 Conseil régional
@@ -50,9 +50,9 @@ const Footer = () => {
               </p>
               <a
                 href="tel:+33(0)426734000"
-                className="text-decoration-none text-reset nav nav-link"
+                className="text-decoration-none text-reset nav nav-link p-0 m-3"
               >
-                <div className="d-flex align-items-center gap-2 mb-3">
+                <div className="d-flex align-items-center gap-2">
                   <img
                     src="/assets/icons/phone-white.svg"
                     alt="Combiné téléphonique"
@@ -65,7 +65,7 @@ const Footer = () => {
               <p>
                 Accueil téléphonique du lundi au vendredi de <time dateTime="08:30">8h30</time> à <time dateTime="17:00">17h</time>
               </p>
-              <div className="d-flex align-items-center gap-2">
+              <div className="d-flex align-items-center gap-2 m-3">
                 <img
                   src="/assets/icons/train-white.svg"
                   alt="Combiné téléphonique"
