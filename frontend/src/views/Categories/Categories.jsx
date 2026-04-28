@@ -16,7 +16,7 @@ const Categories = (props) => {
         <>
             <meta
                 name="description"
-                content="Web site created using create-react-app"
+                content="Vous trouverez ici l'ensemble des artisans de votre région correspondant à une catégie d'activité sépacifique."
             />
             <title>Trouve ton artisan ! - Categories</title>
             

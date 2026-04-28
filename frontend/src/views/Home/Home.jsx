@@ -31,7 +31,7 @@ const Home = (props) => {
         <>
             <meta
                 name="description"
-                content="Web site created using create-react-app"
+                content="Retrouvez ici la possibilité de trouver votre artisan en fonction de sa catégorie d'activité, mais également une liste des top artisans du moment"
             />
             <title>Trouve ton artisan ! - Accueil</title>
             <main className="container-fluid">
