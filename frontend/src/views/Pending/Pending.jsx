@@ -9,6 +9,7 @@ const Pending = () => {
                 name="description"
                 content="Cette page des mentions légales est en construction."
             />
+            <title>Trouve ton artisan ! - Page en construction</title>
             <main className="container-fluid mb-5">
                 <Title titleVisible={false} />
                 <div class="container-lg ps-lg-5 d-flex flex-column justify-content-center align-items-center my-5">
