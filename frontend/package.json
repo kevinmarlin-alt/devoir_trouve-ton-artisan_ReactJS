@@ -17,12 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sass": "npx sass src:src/dist",
-    "sassApp": "npx sass src/App.sass src/App.css",
-    "sassTemplate": "npx sass src/template.sass src/template.css",
-    "sassHeader": "npx sass src/components/Header/Header.sass src/components/Header/Header.css",
-    "sassCardlight": "npx sass src/components/Card_light/Card_light.sass src/components/Card_light/Card_light.css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
