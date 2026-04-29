@@ -161,7 +161,18 @@ const Header = (props) => {
 										{props.categories.map((category) => {
 											return (
 											<li className="nav-item m-2" key={category.id}>
-												<NavLink to={`/categories/${category.id}`} className="nav-link text-black fw-normal px-0" onClick={closeMenu}>{category.name} </NavLink>
+												<NavLink to={`/categories/${category.id}`} className="nav-link d-flex justify-content-between text-decoration-none" onClick={closeMenu}>
+													<p className="text-black fw-normal p-0 m-0 ">{category.name}</p>
+													<img 
+														src="assets/icons/arrow-right.svg" 
+														alt=""
+														width="16px"
+														height="16px"
+														className="d-lg-none"
+													/>
+												
+												</NavLink>
+												
 											</li>)
 										})}
 									</ul>
