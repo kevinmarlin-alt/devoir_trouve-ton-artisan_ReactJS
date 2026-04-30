@@ -1,4 +1,4 @@
-const API_URL = "https://localhost:3000";
+const API_URL = "https://api-trouve-ton-artisan-u6k6.onrender.com";
 
 const apiFetch = async (endpoint, options = {}) => {
   const response = await fetch(`${API_URL}${endpoint}`, {
@@ -10,7 +10,7 @@ const apiFetch = async (endpoint, options = {}) => {
   });
 
   if (!response.ok) {
-    return {message: "Il n'y a pas d'artisans pour votre recherche !"}
+    return {message: "Erreur lors du chargement des données !"}
   }
 
   return response.json();
