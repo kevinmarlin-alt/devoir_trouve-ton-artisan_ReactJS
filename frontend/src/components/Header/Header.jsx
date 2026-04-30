@@ -80,7 +80,7 @@ const Header = (props) => {
 					<div className="container-fluid">
 						<Link className="navbar-brand" to="/">
 							<img
-								src="/assets/images/logo_light.png"
+								src="/assets/images/Logo_light.png"
 								alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
 								height="175px"
 								width= "749"
