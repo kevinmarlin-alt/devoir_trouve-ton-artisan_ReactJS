@@ -5,7 +5,7 @@ const Title = ({ arianeList = [], titleVisible = true, title="Comment trouver mo
     
     <header className="container-lg mb-4">
       <nav>
-        <p className='lh-lg'>
+        <div className='lh-lg'>
           <Link to="/" className="text-blue_bright">Accueil</Link>
           {arianeList.map((item, index) => {
             return (
@@ -24,7 +24,7 @@ const Title = ({ arianeList = [], titleVisible = true, title="Comment trouver mo
                 </span>
             );
           })}
-        </p>
+        </div>
       </nav>
       {titleVisible &&
         <h1 className="mb-5">{title}</h1>

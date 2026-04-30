@@ -80,11 +80,11 @@ const Header = (props) => {
 					<div className="container-fluid">
 						<Link className="navbar-brand" to="/">
 							<img
-								src="assets/images/logo_light.png"
+								src="/assets/images/Logo_light.png"
 								alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
-								height="175px"
+								height="175"
 								width= "749"
-							/>
+							></img>
 						</Link>
 		
 						<div className="d-flex align-items-center gap-3 d-lg-none">
@@ -92,7 +92,6 @@ const Header = (props) => {
 								data-bs-toggle="collapse"
 								data-bs-target="#navbarSearch"
 								aria-controls="navbarSearch"
-								role="button"
 								src="/assets/icons/search-blue.svg"
 								alt=""
 								height="40"
@@ -166,8 +165,8 @@ const Header = (props) => {
 													<img 
 														src="assets/icons/arrow-right.svg" 
 														alt=""
-														width="16px"
-														height="16px"
+														width="16"
+														height="16"
 														className="d-lg-none"
 													/>
 												

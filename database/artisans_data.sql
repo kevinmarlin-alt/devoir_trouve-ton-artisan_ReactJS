@@ -1,5 +1,7 @@
 -- Peuplement de la base de donnée
 
+USE trouve_ton_artisan;
+
 -- - - - - - - - - - - - - - - - - - - - - - - -
 -- Alimentation de la table CATEGORIES
 -- - - - - - - - - - - - - - - - - - - - - - - - 
