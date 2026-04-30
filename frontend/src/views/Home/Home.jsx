@@ -19,7 +19,7 @@ const Home = (props) => {
 
         select.classList.remove("is-valid", "is-invalid")
 
-        if(select.value !== "#") {
+        if(select.value !== "") {
             select.classList.add("is-valid")
             navigate(`categories/${idCategory}`);
         } else {
@@ -42,8 +42,8 @@ const Home = (props) => {
                         <hr className="hr hr-blue"/>
                         <h2 className="mb-4">1. Choisir la catégorie d’artisanat dans le menu.</h2>
                         <form action="#" className="mb-4 col-lg-3" onSubmit={handleSubmit} noValidate>
-                            <select name="idCategory" id="idCategory" className="form-select p-1 mb-4" aria-label="idCategory">
-                                <option value='#' defaultValue="#" disabled>Sélectionez une catégorie</option>
+                            <select name="idCategory" id="idCategory" className="form-select p-1 mb-4" aria-label="idCategory" required>
+                                <option value='' disabled selected>Sélectionez une catégorie</option>
                                 {props.categories.map((category) => {
                                     return (
                                         <option key={category.id} value={category.id}>{category.name}</option>

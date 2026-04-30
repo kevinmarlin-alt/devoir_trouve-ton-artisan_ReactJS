@@ -104,7 +104,6 @@ const Artisan = () => {
                                         src={`/assets/images/artisans/${speciality?.src}`}
                                         className='object-fit-cover'
                                         alt={speciality?.alt}
-                                        //style={{ width: "100%", maxHeight: "350px" }} // a remplacer par une feuille de style
                                     />
                                 </div>
                                 <div className='col-lg-7'>
@@ -203,7 +202,7 @@ const Artisan = () => {
                                         className='form-select'
                                         required
                                     >
-                                        <option defaultValue='0' disabled>
+                                        <option value='' disabled selected>
                                             Choisissez un objet dans la liste
                                         </option>
                                         <option value='1'>Demande de renseignements</option>

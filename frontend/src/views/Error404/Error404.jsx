@@ -28,7 +28,7 @@ const Error404 = () => {
                             width="1482"
                             height="854"
                         />
-                        <hr />
+                        <hr className='hr hr-green' />
                         <Link to="/"><button type='button' className='btn btn-primary'>Revenir à la page d'accueil</button></Link>
                     </section>
                 </div>

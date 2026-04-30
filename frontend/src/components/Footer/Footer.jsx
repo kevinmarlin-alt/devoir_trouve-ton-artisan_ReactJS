@@ -18,13 +18,14 @@ const Footer = () => {
   })
   return (
     <footer className=" text-white">
-      <div className="container-fluid" style={{backgroundColor: "#0074c7"}}>
+      <div className="footer__legal-container container-fluid">
         <div className="container-lg py-4">
           <img
-            className="mb-4"
+            className="footer__brand mb-4"
             src="/assets/images/Logo_white.png"
             alt="Logo Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
-            height="75"
+            height="175"
+            width='749'
           />
           <div className="row">
             <div className="col-lg-3">
@@ -35,7 +36,7 @@ const Footer = () => {
               </p>
             </div>
             <address className="col-lg-9">
-              <p style={{fontWeight: 'bold'}}>Lyon</p>
+              <p className='fw-bold'>Lyon</p>
               <p>
                 101 cours Charlemagne
                 <br />
@@ -111,11 +112,7 @@ const Footer = () => {
           </nav>
         </div>
       </div>
-      <div
-        className="d-flex social-row justify-content-center m-3 column-gap-3"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <div className="d-flex social-row justify-content-center m-3 column-gap-3">
         {socialList.map((social) => (
           <a key={social.name} href={social.url} target="_blank" rel="noreferrer">
             <img

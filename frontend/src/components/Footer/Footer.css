@@ -1,5 +1,15 @@
-address a div p:hover {
+footer a:hover,
+footer a p:hover {
   text-decoration: underline;
+}
+
+.footer__legal-container {
+  background-color: #0074C7;
+}
+
+.footer__brand {
+  width: auto;
+  height: 75px;
 }
 
 /*# sourceMappingURL=Footer.css.map */

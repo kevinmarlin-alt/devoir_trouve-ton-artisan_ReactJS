@@ -8,9 +8,10 @@ header img ~ p {
   color: #0074C7;
 }
 
-@media (width > 992px) {
+@media (min-width: 992px) {
   .navbar-brand img {
-    height: 56px;
+    height: 72px;
+    width: auto;
   }
 }
 
