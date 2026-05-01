@@ -18,9 +18,7 @@ const app = express();
 
 mysqlDb.initClientDbConnection();
 
-app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
-}))
+app.use(helmet())
 
 app.use(
   cors({
