@@ -22,7 +22,7 @@ app.use(helmet())
 
 app.use(
   cors({
-    origin: 'https://trouve-ton-artisan-hb8r.onrender.com',
+    origin:'http://localhost:3001',
     credentials: true
   }),
 );
