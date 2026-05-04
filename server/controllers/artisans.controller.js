@@ -1,4 +1,5 @@
 const artisansServices = require("../services/artisans.services");
+const { validationResult } = require("express-validator");
 
 exports.getTopArtisans = async (req, res) => {
   try {
@@ -18,6 +19,10 @@ exports.getTopArtisans = async (req, res) => {
 };
 
 exports.getById = async (req, res) => {
+  const errors = validationResult(req)
+  if(!errors.isEmpty()) {
+    return res.status(400).json({ message: "Erreur lors de la récupération des informations de l'artrisan." })
+  }
   try {
     const artisan = await artisansServices.getById(req.params.id);
 
@@ -37,6 +42,10 @@ exports.getById = async (req, res) => {
 };
 
 exports.getByName = async (req, res) => {
+  const errors = validationResult(req)
+  if(!errors.isEmpty()) {
+    return res.status(400).json({ message: "Erreur lors de la récupération des informations de l'artrisan." })
+  }
   try {
     const artisans = await artisansServices.getByName(req.params.name);
 

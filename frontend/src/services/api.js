@@ -1,12 +1,12 @@
-const API_URL = "https://api-trouve-ton-artisan-u6k6.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const apiFetch = async (endpoint, options = {}) => {
   const response = await fetch(`${API_URL}${endpoint}`, {
+    ...options,
     headers: {
       "Content-Type": "application/json",
-      ...options.headers
-    },
-    ...options
+      ...(options.headers || {})
+    }
   });
 
   if (!response.ok) {
